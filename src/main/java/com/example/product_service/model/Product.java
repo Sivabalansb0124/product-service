@@ -2,39 +2,26 @@ package com.example.product_service.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "products")
 public class Product {
     @Id
-    public String id;
-    @Field("name")
-    public String ProductName;
-    @Field("cost")
-    public double price;
+    private String id;
 
-    public String getId() {
-        return id;
-    }
+    private String productName;
+    private Double price;
+    private String sellerId;
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    // Getters and setters
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
 
-    public String getProductName() {
-        return ProductName;
-    }
+    public String getProductName() { return productName; }
+    public void setProductName(String productName) { this.productName = productName; }
 
-    public void setProductName(String productName) {
-        ProductName = productName;
-    }
+    public Double getPrice() { return price; }
+    public void setPrice(Double price) { this.price = price; }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    // getters and setters
+    public String getSellerId() { return sellerId; }
+    public void setSellerId(String sellerId) { this.sellerId = sellerId; }
 }
